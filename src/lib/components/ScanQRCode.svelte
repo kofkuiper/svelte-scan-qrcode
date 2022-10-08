@@ -40,7 +40,7 @@
     }
 
     function startScan() {
-        const context = canvas.getContext("2d");
+        const context = canvas.getContext("2d", { willReadFrequently: true });
         const { width, height } = canvas;
 
         context.drawImage(video, 0, 0, width, height);
