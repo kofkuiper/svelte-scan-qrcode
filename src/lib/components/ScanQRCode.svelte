@@ -11,7 +11,6 @@
 
     let video: any;
     let canvas: any;
-    let stream: any;
 
     $: active = !scanResult;
 
@@ -29,7 +28,6 @@
             })
             .then((userStream) => {
                 active = userStream.active;
-                stream = userStream;
                 video.srcObject = userStream;
                 video.setAttribute("playsinline", true);
                 video.play();
