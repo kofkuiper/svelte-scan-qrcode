@@ -12,8 +12,6 @@
     let video: any;
     let canvas: any;
 
-    $: active = !scanResult;
-
     onMount(() => {
         requestCamera();
     });
@@ -27,7 +25,6 @@
                 },
             })
             .then((userStream) => {
-                active = userStream.active;
                 video.srcObject = userStream;
                 video.setAttribute("playsinline", true);
                 video.play();
@@ -71,11 +68,9 @@
     }
 </script>
 
-{#if active}
-    <canvas bind:this={canvas} />
-    <!-- svelte-ignore a11y-media-has-caption -->
-    <video on:canplay={onCanPlay} bind:this={video} />
-{/if}
+<canvas bind:this={canvas} />
+<!-- svelte-ignore a11y-media-has-caption -->
+<video on:canplay={onCanPlay} bind:this={video} />
 
 <style>
     canvas {
