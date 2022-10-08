@@ -1,12 +1,13 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import jsQR from "jsqr";
-    // type optionsType = {
-    //     onPermissionError?: Function;
-    //     onResulted?: Function;
-    // };
-    let scanResult: string = "";
-    // export let options: optionsType;
+
+    type optionsType = {
+        onPermissionError?: Function;
+        onResulted?: Function;
+    };
+    export let scanResult: string = "";
+    export let options: optionsType;
 
     let video: any;
     let canvas: any;
@@ -34,7 +35,13 @@
                 video.play();
                 startScan();
             })
-            .catch((err) => {});
+            .catch((err) => {
+                if (options?.onPermissionError != undefined) {
+                    options.onPermissionError();
+                } else {
+                    alert(err);
+                }
+            });
     }
 
     function startScan() {
@@ -47,7 +54,13 @@
         const qrCode = jsQR(imageData.data, width, height);
 
         if (qrCode) {
-            alert(qrCode.data);
+            scanResult = qrCode.data;
+            if (options?.onResulted != undefined) {
+                options.onResulted(qrCode.data);
+            } else {
+                alert(qrCode.data);
+                setTimeout(startScan, 1000);
+            }
         } else {
             setTimeout(startScan, 500);
         }
