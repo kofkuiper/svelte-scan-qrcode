@@ -5,23 +5,27 @@ specifiers:
   '@neoconfetti/svelte': ^1.0.0
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': next
+  '@sveltejs/package': 1.0.0-next.5
   '@types/cookie': ^0.5.1
   jsqr: ^1.4.0
   svelte: ^3.46.0
   svelte-check: ^2.7.1
   svelte-preprocess: ^4.10.6
+  svelte2tsx: ^0.5.19
   tslib: ^2.3.1
   typescript: ^4.7.4
   vite: ^3.1.0
 
 dependencies:
   jsqr: 1.4.0
+  svelte2tsx: 0.5.19_qy6w2iv5hnh55blsjuu7uihyzm
 
 devDependencies:
   '@fontsource/fira-mono': 4.5.10
   '@neoconfetti/svelte': 1.0.0
   '@sveltejs/adapter-auto': 1.0.0-next.80
   '@sveltejs/kit': 1.0.0-next.511_svelte@3.50.1+vite@3.1.6
+  '@sveltejs/package': 1.0.0-next.5_qy6w2iv5hnh55blsjuu7uihyzm
   '@types/cookie': 0.5.1
   svelte: 3.50.1
   svelte-check: 2.9.1_svelte@3.50.1
@@ -196,6 +200,22 @@ packages:
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
+    dev: true
+
+  /@sveltejs/package/1.0.0-next.5_qy6w2iv5hnh55blsjuu7uihyzm:
+    resolution: {integrity: sha512-cXH8ESgZ5wSPspqsuIpz0hupz+gZlX9SfVV6FdwzY2A/dzKsTXUJKOjSd7hkjr69sBMyQRLfnk9eEaTG1EXGFA==}
+    engines: {node: '>=16.14'}
+    hasBin: true
+    peerDependencies:
+      svelte: ^3.44.0
+    dependencies:
+      chokidar: 3.5.3
+      kleur: 4.1.5
+      sade: 1.8.1
+      svelte: 3.50.1
+      svelte2tsx: 0.5.19_qy6w2iv5hnh55blsjuu7uihyzm
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /@sveltejs/vite-plugin-svelte/1.0.9_svelte@3.50.1+vite@3.1.6:
@@ -401,6 +421,9 @@ packages:
     dependencies:
       ms: 2.1.2
     dev: true
+
+  /dedent-js/1.0.1:
+    resolution: {integrity: sha512-OUepMozQULMLUmhxS95Vudo0jb0UchLimi3+pQ2plj61Fcy8axbP9hbiD4Sz6DPqn6XG3kfmziVfQ1rSys5AJQ==}
 
   /deepmerge/4.2.2:
     resolution: {integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==}
@@ -831,6 +854,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /lower-case/2.0.2:
+    resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
+    dependencies:
+      tslib: 2.4.0
+
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -940,6 +968,12 @@ packages:
     hasBin: true
     dev: true
 
+  /no-case/3.0.4:
+    resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
+    dependencies:
+      lower-case: 2.0.2
+      tslib: 2.4.0
+
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
     engines: {node: 4.x || >=6.0.0}
@@ -996,6 +1030,12 @@ packages:
     dependencies:
       callsites: 3.1.0
     dev: true
+
+  /pascal-case/3.1.2:
+    resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
+    dependencies:
+      no-case: 3.0.4
+      tslib: 2.4.0
 
   /path-is-absolute/1.0.1:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
@@ -1310,7 +1350,17 @@ packages:
   /svelte/3.50.1:
     resolution: {integrity: sha512-bS4odcsdj5D5jEg6riZuMg5NKelzPtmsCbD9RG+8umU03TeNkdWnP6pqbCm0s8UQNBkqk29w/Bdubn3C+HWSwA==}
     engines: {node: '>= 8'}
-    dev: true
+
+  /svelte2tsx/0.5.19_qy6w2iv5hnh55blsjuu7uihyzm:
+    resolution: {integrity: sha512-PvhcjG3fVhFmoO7XWYYqWYkg7lQzO8Q9/T4RQiCAsTZ+lK+9jCAPV8rbeQD8M4AN44u3JqgvaxHrmh095SaxBA==}
+    peerDependencies:
+      svelte: ^3.24
+      typescript: ^4.1.2
+    dependencies:
+      dedent-js: 1.0.1
+      pascal-case: 3.1.2
+      svelte: 3.50.1
+      typescript: 4.8.4
 
   /tar/6.1.11:
     resolution: {integrity: sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==}
@@ -1349,13 +1399,11 @@ packages:
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-    dev: true
 
   /typescript/4.8.4:
     resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /undici/5.11.0:
     resolution: {integrity: sha512-oWjWJHzFet0Ow4YZBkyiJwiK5vWqEYoH7BINzJAJOLedZ++JpAlCbUktW2GQ2DS2FpKmxD/JMtWUUWl1BtghGw==}

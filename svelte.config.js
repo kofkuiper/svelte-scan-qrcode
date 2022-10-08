@@ -8,7 +8,14 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		paths: {
+			base: '/svelte-scan-qrcode'
+		}
+	},
+	package: {
+		dir: 'package',
+		emitTypes: true
 	}
 };
 
