@@ -3,9 +3,13 @@
 </script>
 
 {#if $result}
-    <div>
-        <h2>Scan result: {$result}</h2>
-    </div>
-{:else}
-    <a href="/">Back to Home</a>
+    <h1 class="text-center">Scan result: {$result}</h1>
 {/if}
+<a href="/" class="text-center">Back to Home</a>
+
+<style>
+    .text-center {
+        margin: auto;
+        text-align: center;
+    }
+</style>
