@@ -1,38 +1,51 @@
-# create-svelte
+# svelte-scan-qrcode
+---
+### [ Version 0.0.1 ]
+#### How to use
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+- Install `@kuiper/svelte-scan-qrcode`
+  ```shell
+  npm install --save @kuiper/svelte-scan-qrcode
+  ```
 
-## Creating a project
+  ##### Simple with `bind:scanResult` to get scan result
+  ```svelte
+    <script lang="ts">
+        import { ScanQRCode } from "@kuiper/svelte-scan-qrcode";
+        let result = "";
+    </script>
 
-If you're seeing this, you've probably already done this step. Congrats!
+    <ScanQRCode bind:scanResult={result} options={{}} />
+  ```
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+  ##### Custom with options
+  ```svelte
+    <script lang="ts">
+        import { goto } from "$app/navigation";
+        import { ScanQRCode } from "@kuiper/svelte-scan-qrcode";
+        let result = "";
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+        function _onPermissionError() {
+            alert("Permission rejected");
+            location.reload();
+        }
 
-## Developing
+        function _onResulted() {
+            if (result.includes("love")) {
+                goto("/result"); // go to result page
+            }
+        }
+    </script>
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+    <ScanQRCode
+        bind:scanResult={result}
+        options={{
+            onPermissionError: () => _onPermissionError(),
+            onResulted: () => _onResulted(),
+        }}
+    />
 
-```bash
-npm run dev
+  ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+    - onPermissionError function will call if `@kuiper/svelte-scan-qrcode` package request camera get rejected.
+    - onResulted function will call if the `@kuiper/svelte-scan-qrcode` package gets the scan result from QR Code.
