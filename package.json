@@ -1,8 +1,25 @@
 {
-	"name": "svelte-scan-qrcode",
+	"name": "@kuiper/svelte-scan-qrcode",
+	"description": "Scan QR Code on browser. Support open cameras on Android and iOS browsers.",
 	"version": "0.0.1",
+	"keywords": [
+		"qrcode scanner",
+		"scan",
+		"scan qrcode",
+		"qrcode",
+		"svelte"
+	],
+	"author": {
+		"name": "kuiper",
+		"email": "kofkuiper@gmail.com",
+		"url": "https://github.com/kofkuiper"
+	},
+	"main": "index.ts",
+	"repository": {
+		"url": "https://github.com/kofkuiper/svelte-scan-qrcode"
+	},
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 3000",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
