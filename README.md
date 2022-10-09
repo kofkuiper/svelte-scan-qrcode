@@ -1,6 +1,6 @@
 # svelte-scan-qrcode
 **Scan QR Code on browser by open camera or upload QR Code image. Support open cameras on Android and iOS browsers.**
-## [Demo](svelte-scan-qrcode.vercel.app/)
+## [Demo](https://svelte-scan-qrcode.vercel.app/)
 
 
 
