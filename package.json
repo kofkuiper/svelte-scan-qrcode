@@ -1,7 +1,7 @@
 {
 	"name": "@kuiper/svelte-scan-qrcode",
 	"description": "Scan QR Code on browser by open camera or upload QR Code image. Support open cameras on Android and iOS browsers.",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"keywords": [
 		"qrcode scanner",
 		"scan",
