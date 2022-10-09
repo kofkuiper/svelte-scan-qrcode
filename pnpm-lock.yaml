@@ -4,7 +4,6 @@ specifiers:
   '@fontsource/fira-mono': ^4.5.0
   '@neoconfetti/svelte': ^1.0.0
   '@sveltejs/adapter-auto': next
-  '@sveltejs/adapter-netlify': 1.0.0-next.78
   '@sveltejs/kit': next
   '@sveltejs/package': 1.0.0-next.5
   '@types/cookie': ^0.5.1
@@ -24,7 +23,6 @@ devDependencies:
   '@fontsource/fira-mono': 4.5.10
   '@neoconfetti/svelte': 1.0.0
   '@sveltejs/adapter-auto': 1.0.0-next.80
-  '@sveltejs/adapter-netlify': 1.0.0-next.78
   '@sveltejs/kit': 1.0.0-next.511_svelte@3.50.1+vite@3.1.6
   '@sveltejs/package': 1.0.0-next.5_qy6w2iv5hnh55blsjuu7uihyzm
   '@types/cookie': 0.5.1
