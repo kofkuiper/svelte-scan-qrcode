@@ -1,6 +1,6 @@
 # svelte-scan-qrcode
 **Scan QR Code on browser by open camera or upload QR Code image. Support open cameras on Android and iOS browsers.**
-## [Demo](https://main--verdant-naiad-e61991.netlify.app/)
+## [Demo](svelte-scan-qrcode.vercel.app/)
 
 
 
