@@ -1,5 +1,5 @@
 # svelte-scan-qrcode
-
+**Scan QR Code on browser by open camera or upload QR Code image. Support open cameras on Android and iOS browsers.**
 ## [Demo](https://main--verdant-naiad-e61991.netlify.app/)
 
 
@@ -10,7 +10,6 @@
   ```shell
   npm install --save @kuiper/svelte-scan-qrcode
   ```
-
   ##### Simple with `bind:scanResult` to get scan result
   ```svelte
     <script lang="ts">
@@ -21,7 +20,7 @@
     <ScanQRCode bind:scanResult={result} options={{}} />
   ```
 
-  ##### Custom with options
+  ##### Custom with `enableQRCodeReaderButton` and `options`
   ```svelte
     <script lang="ts">
         import { goto } from "$app/navigation";
@@ -42,13 +41,25 @@
 
     <ScanQRCode
         bind:scanResult={result}
+        enableQRCodeReaderButton={true}
         options={{
             onPermissionError: () => _onPermissionError(),
             onResulted: () => _onResulted(),
         }}
     />
-
-  ```
-
-    - onPermissionError function will call if `@kuiper/svelte-scan-qrcode` package request camera get rejected.
-    - onResulted function will call if the `@kuiper/svelte-scan-qrcode` package gets the scan result from QR Code.
+    ```
+---
+- #### Props
+  - **scanResult**
+    - Type `string`.
+    - Use `bind:scanResult` to get scan result.
+  - **enableQRCodeReaderButton**
+    - Type `boolean`.
+    - Set to true for enable upload QR Code image button. After user uploaded image `@kuiper/svelte-scan-qrcode` package will read QR Code from image.
+  - **options**
+    - Types ``` {
+            onPermissionError?: Function;
+            onResulted?: Function;
+            } ```
+        - onPermissionError function will call if `@kuiper/svelte-scan-qrcode` package request camera get rejected.
+        - onResulted function will call if the `@kuiper/svelte-scan-qrcode` package gets the scan result from QR Code.
