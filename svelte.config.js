@@ -9,9 +9,6 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		paths: {
-			base: '/svelte-scan-qrcode'
-		}
 	},
 	package: {
 		dir: 'package',
