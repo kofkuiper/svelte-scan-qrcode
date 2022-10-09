@@ -1,9 +1,12 @@
 # svelte-scan-qrcode
----
-### [ Version 0.0.1 ]
+
+## [Demo](https://main--verdant-naiad-e61991.netlify.app/)
+
+
+
 #### How to use
 
-- Install `@kuiper/svelte-scan-qrcode`
+- Install [@kuiper/svelte-scan-qrcode](https://www.npmjs.com/package/@kuiper/svelte-scan-qrcode)
   ```shell
   npm install --save @kuiper/svelte-scan-qrcode
   ```
